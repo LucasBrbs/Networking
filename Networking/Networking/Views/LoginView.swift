@@ -63,25 +63,32 @@ struct LoginView : View {
                     NavigationLink("Create Account",destination: CreateUserView())
                     
                     
-//                    Button("Login") {
+                    Button("Login") {
+                        autheticateUser(username: username, password: password)
+
+
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: 130, height: 50)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    
+//                    Button("Login"){
+//                        self.showCentralView.toggle()
 //                        autheticateUser(username: username, password: password)
+//                    }.foregroundColor(.white)
+//                        .frame(width: 130, height: 50)
+//                        .background(Color.green)
+//                        .cornerRadius(10)
+//                    .sheet(isPresented: $showCentralView){
+//                        if(session == true){
+//                            CentralView(showCentralView: self.$showCentralView)
+//                        }
+//
+//
 //
 //
 //                    }
-//                    .foregroundColor(.white)
-//                    .frame(width: 130, height: 50)
-//                    .background(Color.green)
-//                    .cornerRadius(10)
-                    
-                    Button("Login"){
-                        self.showCentralView.toggle()
-                    }.foregroundColor(.white)
-                        .frame(width: 130, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                    .sheet(isPresented: $showCentralView){
-                        CentralView(showCentralView: self.$showCentralView)
-                    }
 //                    NavigationLink(destination: Text("Você está logado em @\(username)"), isActive: $showingLoginScreen ) {
 //                        EmptyView()
 //                    }
@@ -118,7 +125,7 @@ struct LoginView : View {
         }
     }
 }
-//mrodrigues20@ifce.idserve.net
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()

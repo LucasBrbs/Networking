@@ -19,7 +19,7 @@ struct CentralView : View {
                 Text("\(posts.count)")
                 ForEach(posts) { post in
                     Text(post.content)
-                    Text(post.like_count)
+                    
                 }
             }
         }

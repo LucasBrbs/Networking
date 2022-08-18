@@ -1,17 +1,14 @@
-//
-//  Models.swift
-//  Networking
-//
-//  Created by Lucas Barbosa de Oliveira on 10/08/22.
-//
+//Modelo de login
 
 import Foundation
 
+//Puxa o token e as informações dos Users da API
 struct Session: Codable {
     var token: String
     var user: User
 }
 
+//Puxa as informações do usuário da API
 struct User: Codable{
     var id: UUID
     var name: String
