@@ -1,23 +1,17 @@
-//
-//  LoginView.swift
-//  Networking
-//
-//  Created by Lucas Barbosa de Oliveira on 09/08/22.
-//
 
 import Foundation
 import SwiftUI
 
 
-struct LoginView : View {
+struct CreateUserView : View {
     
     @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
     
     @State var username: String = ""
+    @State var email: String = ""
     @State var password: String = ""
-    @State private var wrongUsername = 0
-    @State private var wrongPassword = 0
-    @State private var showingLoginScreen = false
+    @State private var wrongEmail = 0
+    @State private var showingCreateUserScreen = false
     
     @State private var showCentralView = false
     
@@ -34,7 +28,7 @@ struct LoginView : View {
                     .foregroundColor(.white)
                 
                 VStack {
-                    Text("User Login 👥")
+                    Text("Create Account 👥")
                         .font(.largeTitle)
                         .bold()
                         .padding()
@@ -43,7 +37,14 @@ struct LoginView : View {
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongUsername))
+                        
+                    
+                    TextField("Email", text: $email)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(wrongEmail))
                     
                 ZStack (alignment: .trailing){
                     TextField("Password", text: $password)
@@ -51,40 +52,30 @@ struct LoginView : View {
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongPassword))
+                        
 
                     Image(systemName: "eye.fill")
                             .foregroundColor(Color(.systemGray))
                             .colorMultiply(.gray)
                             .alignmentGuide(.trailing, computeValue: { _ in 40 })
                     }
-
-//                    Text("Não tem cadastro?").foregroundColor(Color.blue)
-                    NavigationLink("Create Account",destination: CreateUserView())
-                    
-                    
-//                    Button("Login") {
-//                        autheticateUser(username: username, password: password)
-//
-//
-//                    }
-//                    .foregroundColor(.white)
-//                    .frame(width: 130, height: 50)
-//                    .background(Color.green)
-//                    .cornerRadius(10)
-                    
-                    Button("Login"){
-                        self.showCentralView.toggle()
-                    }.foregroundColor(.white)
-                        .frame(width: 130, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                    .sheet(isPresented: $showCentralView){
-                        CentralView(showCentralView: self.$showCentralView)
+                    Button("Create") {
+                        registerUser(email: email, login: username, password: password)
+                            
+                        
                     }
-//                    NavigationLink(destination: Text("Você está logado em @\(username)"), isActive: $showingLoginScreen ) {
-//                        EmptyView()
-//                    }
+                    .foregroundColor(.white)
+                    .frame(width: 130, height: 50)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    
+                    
+//                    Button("Editar"){
+//                                            self.showEditView.toggle()
+//                                        }.sheet(isPresented: $showEditView){
+//                                            EditView(showEditView: self.$showEditView)
+//                                        }
+                    
                 }
             }
             .navigationBarHidden(true)
@@ -92,7 +83,7 @@ struct LoginView : View {
         }
     }
     
-    func autheticateUser(username: String, password: String) {
+    func registerUser(email: String, login: String, password: String) {
 //        if username.lowercased() == "madalena22" {
 //            wrongUsername = 0
 //        if password.lowercased() == "1234"{
@@ -106,22 +97,25 @@ struct LoginView : View {
 //        }
 //
         Task {
-            let session = await API.login(username: username, password: password)
-            if (session != nil){
-            
-//                print("sucesso")
-                
-            }
-            else {
-//                print("falha")
-            }
+//            let session = await API.login(username: username, password: password)
+            let user = CreateUsersModel(name: username, email: email, password: password)
+            let session = await API.createUser(user: user)
+            print(session)
+//            if (session != nil){
+//
+////                print("sucesso")
+//
+//            }
+//            else {
+////                print("falha")
+//            }
         }
     }
 }
 //mrodrigues20@ifce.idserve.net
-struct LoginView_Previews: PreviewProvider {
+struct CreateUserView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        CreateUserView()
     }
 }
 

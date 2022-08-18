@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct CentralView : View {
-    
+    @Binding var showCentralView: Bool
     @State var posts: [NetPost] = []
     
     var body: some View {
@@ -19,12 +19,25 @@ struct CentralView : View {
                 Text("\(posts.count)")
                 ForEach(posts) { post in
                     Text(post.content)
+                    Text(post.like_count)
                 }
-            }.navigationBarTitle("title")
+            }
         }
         .task {
             let posts = await API.getAllPosts()
             self.posts = posts
         }
     }
+//    @ObservedObject var viewModel: CentralViewModel = CentralViewModel()
+//
+//    var body: some View {
+//        ZStack {
+//            if viewModel.netPost.isEmpty {
+//
+//            } else {
+//
+//            }
+//        }
+//    }
+    //mudar nome
 }

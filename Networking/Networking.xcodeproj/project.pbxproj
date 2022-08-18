@@ -17,7 +17,14 @@
 		FC438C7D28A2A6DC00FEAF3D /* CentralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C7C28A2A6DC00FEAF3D /* CentralView.swift */; };
 		FC438C7F28A2AB6000FEAF3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C7E28A2AB6000FEAF3D /* LoginView.swift */; };
 		FC438C8328A3EDE500FEAF3D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8228A3EDE500FEAF3D /* API.swift */; };
-		FC438C8528A3F04B00FEAF3D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8428A3F04B00FEAF3D /* Models.swift */; };
+		FC438C8528A3F04B00FEAF3D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8428A3F04B00FEAF3D /* PostModel.swift */; };
+		FC438C8728A5231F00FEAF3D /* CentralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8628A5231F00FEAF3D /* CentralViewModel.swift */; };
+		FC438C8928A52D2F00FEAF3D /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8828A52D2F00FEAF3D /* NewPostView.swift */; };
+		FC438C8B28ABBF2200FEAF3D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8A28ABBF2200FEAF3D /* LoginViewModel.swift */; };
+		FC438C8D28ABC00500FEAF3D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8C28ABC00500FEAF3D /* LoginModel.swift */; };
+		FC438C8F28AD12DF00FEAF3D /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C8E28AD12DF00FEAF3D /* CreateUserModel.swift */; };
+		FC438C9128AD133E00FEAF3D /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C9028AD133E00FEAF3D /* CreateUserView.swift */; };
+		FC438C9328AD1F7300FEAF3D /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC438C9228AD1F7300FEAF3D /* CreateUserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +58,14 @@
 		FC438C7C28A2A6DC00FEAF3D /* CentralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralView.swift; sourceTree = "<group>"; };
 		FC438C7E28A2AB6000FEAF3D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FC438C8228A3EDE500FEAF3D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		FC438C8428A3F04B00FEAF3D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FC438C8428A3F04B00FEAF3D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		FC438C8628A5231F00FEAF3D /* CentralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralViewModel.swift; sourceTree = "<group>"; };
+		FC438C8828A52D2F00FEAF3D /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
+		FC438C8A28ABBF2200FEAF3D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FC438C8C28ABC00500FEAF3D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		FC438C8E28AD12DF00FEAF3D /* CreateUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserModel.swift; sourceTree = "<group>"; };
+		FC438C9028AD133E00FEAF3D /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
+		FC438C9228AD1F7300FEAF3D /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +119,7 @@
 				FC438C8128A3DF6100FEAF3D /* Model */,
 				FC438C8028A3DF5600FEAF3D /* Services */,
 				FC438C7B28A2A67E00FEAF3D /* Views */,
-				FC438C7A28A2A66B00FEAF3D /* Controller */,
+				FC438C7A28A2A66B00FEAF3D /* ViewModel */,
 				FC438C5428A2A59600FEAF3D /* Assets.xcassets */,
 				FC438C5628A2A59600FEAF3D /* Preview Content */,
 			);
@@ -137,11 +151,14 @@
 			path = NetworkingUITests;
 			sourceTree = "<group>";
 		};
-		FC438C7A28A2A66B00FEAF3D /* Controller */ = {
+		FC438C7A28A2A66B00FEAF3D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FC438C8628A5231F00FEAF3D /* CentralViewModel.swift */,
+				FC438C8A28ABBF2200FEAF3D /* LoginViewModel.swift */,
+				FC438C9228AD1F7300FEAF3D /* CreateUserViewModel.swift */,
 			);
-			path = Controller;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FC438C7B28A2A67E00FEAF3D /* Views */ = {
@@ -151,6 +168,8 @@
 				FC438C5228A2A59400FEAF3D /* ContentView.swift */,
 				FC438C7C28A2A6DC00FEAF3D /* CentralView.swift */,
 				FC438C7E28A2AB6000FEAF3D /* LoginView.swift */,
+				FC438C8828A52D2F00FEAF3D /* NewPostView.swift */,
+				FC438C9028AD133E00FEAF3D /* CreateUserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,7 +185,9 @@
 		FC438C8128A3DF6100FEAF3D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FC438C8428A3F04B00FEAF3D /* Models.swift */,
+				FC438C8428A3F04B00FEAF3D /* PostModel.swift */,
+				FC438C8C28ABC00500FEAF3D /* LoginModel.swift */,
+				FC438C8E28AD12DF00FEAF3D /* CreateUserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,9 +325,16 @@
 				FC438C5328A2A59400FEAF3D /* ContentView.swift in Sources */,
 				FC438C5128A2A59400FEAF3D /* NetworkingApp.swift in Sources */,
 				FC438C7F28A2AB6000FEAF3D /* LoginView.swift in Sources */,
-				FC438C8528A3F04B00FEAF3D /* Models.swift in Sources */,
+				FC438C8528A3F04B00FEAF3D /* PostModel.swift in Sources */,
+				FC438C9328AD1F7300FEAF3D /* CreateUserViewModel.swift in Sources */,
 				FC438C7D28A2A6DC00FEAF3D /* CentralView.swift in Sources */,
+				FC438C8D28ABC00500FEAF3D /* LoginModel.swift in Sources */,
+				FC438C9128AD133E00FEAF3D /* CreateUserView.swift in Sources */,
 				FC438C8328A3EDE500FEAF3D /* API.swift in Sources */,
+				FC438C8728A5231F00FEAF3D /* CentralViewModel.swift in Sources */,
+				FC438C8928A52D2F00FEAF3D /* NewPostView.swift in Sources */,
+				FC438C8B28ABBF2200FEAF3D /* LoginViewModel.swift in Sources */,
+				FC438C8F28AD12DF00FEAF3D /* CreateUserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
